@@ -1,0 +1,85 @@
+﻿
+@model pcshop.Models.Cliente
+
+@{
+    ViewBag.Title = "Customer Profile";
+}
+
+<div class="nav navbar-default">
+    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
+        <h1 class="panel-title text-center" style="font-size:20px;color:white">Customer Profile</h1>
+    </div>
+</div>
+<br />
+<div class="form-horizontal panel panel-primary">
+    <fieldset>
+        <div class="nav navbar-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Personal Information of @Html.DisplayFor(model => model.NombreApellido)</h3>
+            </div>
+        </div>
+        <br />
+        <div class="panel-body">
+            <dl class="dl-horizontal table-hover">
+                <dt>
+                    Identification Number:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DNI)
+                </dd>
+                <dt>
+                    Full Name:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NombreApellido)
+                </dd>
+                <dt>
+                    E-Mail:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt>
+                    Address:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
+                <dt>
+                    Phone Number:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+                <dt>
+                    Create At:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaCreado)
+                </dd>
+                <dt>
+                    Update At:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaActualizado)
+                </dd>
+                <dt>
+                    Active:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Active)
+                </dd>
+                <dt>
+                    User Name:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IDUser)
+                </dd>
+            </dl>
+        </div>
+    </fieldset>
+</div>
+<p>
+    <a class="btn btn-primary btn-sm" style="font-size:13px;" href="~/Home/Index">Back To Home</a>
+    <a class="btn btn-warning btn-sm" style="font-size:13px;" href="~/Clientes/Edit/@Model.IDCliente">Edit Information</a>
+</p>

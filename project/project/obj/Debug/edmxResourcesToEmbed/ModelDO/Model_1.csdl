@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="projectContextEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="ProfileRoleUser" ReturnType="Collection(projectContextModel.ProfileRoleUser_Result)" />
+  </EntityContainer>
+  <ComplexType Name="ProfileRoleUser_Result">
+    <Property Type="String" Name="User_Name" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="Role_Name" Nullable="false" MaxLength="256" />
+  </ComplexType>
+</Schema>

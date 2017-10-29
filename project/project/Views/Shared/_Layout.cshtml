@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @using Microsoft.AspNet.Identity
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("< PC SHOP >", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel Control<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Customer", "Index", "Clientes")</li>
+                            <li>@Html.ActionLink("Category", "Index", "Categorias")</li>
+                            <li>@Html.ActionLink("Product", "Index", "Productoes")</li>
+                            <li>@Html.ActionLink("Attribute", "Index", "Atributoes")</li>
+                            <li>@Html.ActionLink("Supplier", "Index", "Proveedors")</li>
+                            <li>@Html.ActionLink("Role", "ProfileRoles", "Role")</li>
+                            <li>@Html.ActionLink("Product List", "List", "Productoes")</li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer Profile<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            @{
+                                string idUser = User.Identity.GetUserName();
+                                string ids = User.Identity.GetUserId();
+                            }
+                            @*<li>@Html.ActionLink("Profile Details", "ProfileUser", "Clientes")</li>
+                                <li>@Html.ActionLink("Profile Details", "ProfileUser","Clientes", new { id = ids })</li>*@
+                            @* <li>@Html.Partial("Account Details", "_LoginPartial")</li>*@
+                        </ul>
+                    </li>
+                    @*<li>@Html.ActionLink("Customer", "Index", "Clientes")</li>
+                        <li>@Html.ActionLink("Category", "Index", "Categorias")</li>
+                        <li>@Html.ActionLink("Role", "ProfileRoles", "Role")</li>*@
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right" style="margin-right:15px;">
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @*<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.tablesorter.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery.tablesorter.pager.js")" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(function () {
+            $("table.tablesorter").tablesorter({ widthFixed: true, sortList: [[0, 0]] })
+            .tablesorterPager({ container: $("#pager"), size: $(".pagesize option:selected").val() });
+        });
+        </script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @*<script>
+        $(document).ready(function(){
+            $('.myCarousel').carousel({
+                interval: 3000
+            });
+        });
+        </script>*@
+</body>
+</html>
