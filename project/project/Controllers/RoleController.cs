@@ -31,6 +31,7 @@ namespace project.Controllers
         /// GET: Role
         /// </summary>
         /// <returns></returns>
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var Roles = _context.Roles.ToList();
@@ -42,6 +43,7 @@ namespace project.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int id)
         {
             return View();
@@ -51,6 +53,7 @@ namespace project.Controllers
         /// GET: Role/Create
         /// </summary>
         /// <returns></returns>
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             var Role = new IdentityRole();
@@ -62,6 +65,7 @@ namespace project.Controllers
         /// <param name="Role"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(IdentityRole Role)
         {
             try
@@ -75,7 +79,7 @@ namespace project.Controllers
                 return View();
             }
         }
-
+        [Authorize(Roles = "Admin")]
         public ActionResult ProfileRoles()
         {
 

@@ -175,11 +175,13 @@
     <Compile Include="Controllers\AtributoesController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\ProveedorsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\WishlistsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,8 +200,68 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ModelDO\Model_2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\Model_2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\Model_2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_2.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ModelDO\ProfileRoleUser_Result.cs">
       <DependentUpon>Model_1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewAccesorios2_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewCase_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewDetailsProducto2_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewDetailsProducto_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewDetailsProfile_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewDiscoDuro_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewFuentePoder_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewMonitor_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewPerifericos_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewProcesadorAMD_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewProcesadorIntel_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewProcesador_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewRam_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewTarjetaMadre_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDO\viewTarjetaVideo_Result.cs">
+      <DependentUpon>Model_2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Atributo.cs" />
@@ -223,6 +285,19 @@
     <Content Include="Content\Images\enfriamiento-liquido.jpg" />
     <Content Include="Content\Images\gaming.jpg" />
     <Content Include="Content\Images\headset.jpg" />
+    <Content Include="Content\Images\Index\1.0.0.jpg" />
+    <Content Include="Content\Images\Index\110-gaming-logo.png" />
+    <Content Include="Content\Images\Index\2578059-gameplay_gridautosport_gameplay1_20140625.jpg" />
+    <Content Include="Content\Images\Index\35730_Gaming_LP_Gamescom_Banner_Startseite.jpg" />
+    <Content Include="Content\Images\Index\492044-gaming-mice-s-glowing-logos.jpg" />
+    <Content Include="Content\Images\Index\798cf8d8116e498e3357c05247cc9605-320-80.jpg" />
+    <Content Include="Content\Images\Index\Gamer-for-life-by-chucklesmedia-on-deviantart.jpg" />
+    <Content Include="Content\Images\Index\GridAutosport4.jpg" />
+    <Content Include="Content\Images\Index\hqdefault.jpg" />
+    <Content Include="Content\Images\Index\monitores._V508871358_.jpg" />
+    <Content Include="Content\Images\Index\nvidia-titan-x-11.jpg" />
+    <Content Include="Content\Images\Index\placasb._V508871352_.jpg" />
+    <Content Include="Content\Images\Index\strike-spectra.jpg" />
     <Content Include="Content\Images\memoria-ram.jpg" />
     <Content Include="Content\Images\monitores.jpg" />
     <Content Include="Content\Images\procesadores-amd.jpg" />
@@ -248,6 +323,16 @@
       <DependentUpon>Model_1.edmx</DependentUpon>
       <LastGenOutput>Model_1.cs</LastGenOutput>
     </Content>
+    <Content Include="ModelDO\Model_2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_2.edmx</DependentUpon>
+      <LastGenOutput>Model_2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDO\Model_2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_2.edmx</DependentUpon>
+      <LastGenOutput>Model_2.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootswatch.less" />
@@ -260,6 +345,14 @@
     </EntityDeploy>
     <Content Include="ModelDO\Model_1.edmx.diagram">
       <DependentUpon>Model_1.edmx</DependentUpon>
+    </Content>
+    <Content Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="ModelDO\Model_2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ModelDO\Model_2.edmx.diagram">
+      <DependentUpon>Model_2.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -340,6 +433,28 @@
     <Content Include="Views\Clientes\ProfileUser.cshtml" />
     <Content Include="Views\Productoes\List.cshtml" />
     <Content Include="Views\Role\ProfileRoles.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideo.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMadre.cshtml" />
+    <Content Include="Views\Consultas\Ram.cshtml" />
+    <Content Include="Views\Consultas\ProcesadorIntel.cshtml" />
+    <Content Include="Views\Consultas\ProcesadorAmd.cshtml" />
+    <Content Include="Views\Consultas\Procesador.cshtml" />
+    <Content Include="Views\Consultas\Perifericos.cshtml" />
+    <Content Include="Views\Consultas\Monitor.cshtml" />
+    <Content Include="Views\Consultas\FuentePoder.cshtml" />
+    <Content Include="Views\Consultas\DiscoDuro.cshtml" />
+    <Content Include="Views\Consultas\Case.cshtml" />
+    <Content Include="Views\Consultas\Accesorios.cshtml" />
+    <Content Include="Views\Consultas\Accesorios2.cshtml" />
+    <Content Include="Views\Consultas\Index.cshtml" />
+    <Content Include="Views\Consultas\Details.cshtml" />
+    <Content Include="Views\Consultas\DetailsProduct.cshtml" />
+    <Content Include="Views\Wishlists\Create.cshtml" />
+    <Content Include="Views\Wishlists\Delete.cshtml" />
+    <Content Include="Views\Wishlists\Details.cshtml" />
+    <Content Include="Views\Wishlists\Edit.cshtml" />
+    <Content Include="Views\Wishlists\Index.cshtml" />
+    <Content Include="Views\Wishlists\CreateWishlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

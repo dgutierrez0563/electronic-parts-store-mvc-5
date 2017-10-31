@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "All Collections";
 }
-
+<br />
 <div class="panel panel-primary">
     <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
-        <h1 class="panel-title text-center" style="font-size:20px;">Product List</h1>
+        <h1 class="panel-title text-center" style="font-size:20px;">All Collections</h1>
     </div>
 </div>
 <!-- Page Content -->
@@ -13,20 +13,20 @@
     <div class="row">
         <div class="col-lg-3">
             <div class="breadcrumb">
-                <h1 class="my-4">Categories</h1>
+                <h1 class="my-4">Categoriess</h1>
             </div>
             @*<h1 class="my-4 tex">Categories</h1>*@
             <div class="list-group">
-                <a href="#" class="list-group-item">Accessories</a>
-                <a href="#" class="list-group-item">Case</a>
-                <a href="#" class="list-group-item">Grafics Card</a>
-                <a href="#" class="list-group-item">Monitor</a>
-                <a href="#" class="list-group-item">Motherboard</a>
-                <a href="#" class="list-group-item">Peripherals</a>
-                <a href="#" class="list-group-item">Power Supply</a>
-                <a href="#" class="list-group-item">Processor</a>
-                <a href="#" class="list-group-item">RAM</a>
-                <a href="#" class="list-group-item">Storage</a>
+                <a href="~/Consultas/Accesorios" class="list-group-item">Accessories</a>
+                <a href="~/Consultas/Case" class="list-group-item">Case</a>
+                <a href="~/Consultas/TarjetaVideo" class="list-group-item">Grafics Card</a>
+                <a href="~/Consultas/Monitor" class="list-group-item">Monitor</a>
+                <a href="~/Consultas/TarjetaMadre" class="list-group-item">Motherboard</a>
+                <a href="~/Consultas/Perifericos" class="list-group-item">Peripherals</a>
+                <a href="~/Consultas/FuentePoder" class="list-group-item">Power Supply</a>
+                <a href="~/Consultas/Procesador" class="list-group-item">Processor</a>
+                <a href="~/Consultas/Ram" class="list-group-item">RAM</a>
+                <a href="~/Consultas/DiscoDuro" class="list-group-item">Storage</a>
                 @*<li>@Html.ActionLink("Profile Details", "ProfileUser", "Clientes", new { id = ids })</li>*@
             </div>
         </div>
@@ -97,10 +97,8 @@
                         <img src="~/Content/Images/sillas-gamer.jpg" alt="banner15">
                     </div>
                 </div>
-
                 <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                 <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-
             </div>
             <br />
             <div class="progress progress-striped active">
@@ -115,13 +113,13 @@
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="http://placehold.it/150x100" alt=""></a>
                             <div class="card-body">
-                                <h5 class="text-danger">
-                                    @*<a href="#">Item One</a>*@
-                                    <a href="~/Productoes/Details/@item.IDProducto">@item.Nombre</a>
+                                <h5 class="text-danger">                                    
+                                    <a href="~/Consultas/DetailsProduct/@item.IDProducto">@item.Nombre</a>
                                 </h5>
                                 <h6>$@item.Precio</h6>
-                                <h7>In Stock @item.Stock</h7>
-                                @*<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>*@
+                                <h7>In Stock @item.Stock</h7><br />
+                                <a class="btn btn-warning btn-xs" href="#"><span class="glyphicon glyphicon-plus"></span> To Car</a>
+                                <a class="btn btn-info btn-xs" href="#"><span class="glyphicon glyphicon-plus"></span>Add Wish</a>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

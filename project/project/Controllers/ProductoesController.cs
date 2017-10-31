@@ -12,6 +12,7 @@ namespace project.Controllers
         private Modelo db = new Modelo();
 
         // GET: Productoes
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var productos = db.Productos.Include(p => p.Categorias).Include(p => p.Proveedors);
@@ -24,6 +25,7 @@ namespace project.Controllers
         }
 
         // GET: Productoes/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +41,7 @@ namespace project.Controllers
         }
 
         // GET: Productoes/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.IDCategoria = new SelectList(db.Categorias, "IDCategoria", "Nombre");
@@ -51,6 +54,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "IDProducto,Nombre,Precio,IDCategoria,IDProveedor,Stock,FechaCreado,FechaActualizado")] Producto producto)
         {
             if (ModelState.IsValid)
@@ -68,6 +72,7 @@ namespace project.Controllers
         }
 
         // GET: Productoes/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -89,6 +94,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "IDProducto,Nombre,Precio,IDCategoria,IDProveedor,Stock,FechaCreado,FechaActualizado")] Producto producto)
         {
             if (ModelState.IsValid)
@@ -104,6 +110,7 @@ namespace project.Controllers
         }
 
         // GET: Productoes/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,6 +128,7 @@ namespace project.Controllers
         // POST: Productoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Producto producto = db.Productos.Find(id);

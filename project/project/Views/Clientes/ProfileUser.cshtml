@@ -1,85 +1,91 @@
 ﻿
-@model pcshop.Models.Cliente
+@model IEnumerable<project.ModelDO.viewDetailsProfile_Result>
 
 @{
     ViewBag.Title = "Customer Profile";
 }
 
-<div class="nav navbar-default">
+<div class="panel panel-primary">
     <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
-        <h1 class="panel-title text-center" style="font-size:20px;color:white">Customer Profile</h1>
+        <h1 class="panel-title text-center" style="font-size:20px;">Customer Control</h1>
     </div>
 </div>
-<br />
-<div class="form-horizontal panel panel-primary">
-    <fieldset>
-        <div class="nav navbar-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Personal Information of @Html.DisplayFor(model => model.NombreApellido)</h3>
-            </div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Customer Information</h2>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <a class="btn btn-success btn-sm" style="font-size:12px;" href="~/Clientes/Create">Create New Customer</a>
+            <br />
         </div>
-        <br />
-        <div class="panel-body">
-            <dl class="dl-horizontal table-hover">
-                <dt>
-                    Identification Number:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.DNI)
-                </dd>
-                <dt>
-                    Full Name:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.NombreApellido)
-                </dd>
-                <dt>
-                    E-Mail:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Email)
-                </dd>
-                <dt>
-                    Address:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Direccion)
-                </dd>
-                <dt>
-                    Phone Number:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Telefono)
-                </dd>
-                <dt>
-                    Create At:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.FechaCreado)
-                </dd>
-                <dt>
-                    Update At:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.FechaActualizado)
-                </dd>
-                <dt>
-                    Active:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Active)
-                </dd>
-                <dt>
-                    User Name:
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.IDUser)
-                </dd>
-            </dl>
-        </div>
-    </fieldset>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr class="info">
+                    <th>
+                        Cédula
+                    </th>
+                    <th>
+                        Nombre Completo
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Dirección
+                    </th>
+                    <th>
+                        Telefono
+                    </th>
+                    <th>
+                        Create At
+                    </th>
+                    <th>
+                        Update At
+                    </th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DNI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreApellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaCreado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaActualizado)
+                    </td>
+                    <td class="btn btn-group text-center">
+                        @*<a class="btn btn-info btn-xs" style="font-size:11px;" href="~/Clientes/Details/@item.IDCliente">View</a>*@
+                        <a class="btn btn-warning btn-xs" style="font-size:11px;" href="~/Clientes/Edit/@item.IDCliente">Edit</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
 </div>
-<p>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+@*<p>
     <a class="btn btn-primary btn-sm" style="font-size:13px;" href="~/Home/Index">Back To Home</a>
     <a class="btn btn-warning btn-sm" style="font-size:13px;" href="~/Clientes/Edit/@Model.IDCliente">Edit Information</a>
-</p>
+</p>*@

@@ -40,6 +40,8 @@ C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzad
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\System.Web.WebPages.dll
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\System.Web.WebPages.Razor.dll
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\WebGrease.dll
+C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\EntityFramework.xml
+C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\EntityFramework.SqlServer.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\System.Web.Helpers.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\System.Web.Mvc.xml
@@ -50,8 +52,6 @@ C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzad
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\System.Web.WebPages.Razor.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\Antlr3.Runtime.pdb
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\Newtonsoft.Json.xml
-C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\EntityFramework.xml
-C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\EntityFramework.SqlServer.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\project\project\bin\Microsoft.AspNet.Identity.EntityFramework.xml

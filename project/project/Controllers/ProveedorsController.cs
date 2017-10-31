@@ -12,12 +12,14 @@ namespace project.Controllers
         private Modelo db = new Modelo();
 
         // GET: Proveedors
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Proveedors.ToList());
         }
 
         // GET: Proveedors/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -33,6 +35,7 @@ namespace project.Controllers
         }
 
         // GET: Proveedors/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -43,6 +46,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "IDProveedor,Nombre,Representante,Email,Telefono,Direccion,Detalle,FechaCreado,FechaActualizado")] Proveedor proveedor)
         {
             if (ModelState.IsValid)
@@ -58,6 +62,7 @@ namespace project.Controllers
         }
 
         // GET: Proveedors/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,6 +82,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "IDProveedor,Nombre,Representante,Email,Telefono,Direccion,Detalle,FechaCreado,FechaActualizado")] Proveedor proveedor)
         {
             if (ModelState.IsValid)
@@ -90,6 +96,7 @@ namespace project.Controllers
         }
 
         // GET: Proveedors/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +114,7 @@ namespace project.Controllers
         // POST: Proveedors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Proveedor proveedor = db.Proveedors.Find(id);

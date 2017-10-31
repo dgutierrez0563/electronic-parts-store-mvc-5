@@ -4,20 +4,24 @@ using System.Net;
 using System.Web.Mvc;
 using project.Models;
 using System;
+using project.ModelDO;
 
 namespace project.Controllers
 {
     public class ClientesController : Controller
     {
+        Entities_Consulta _entidad = new Entities_Consulta();
         private Modelo db = new Modelo();
 
         // GET: Clientes
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Clientes.ToList());
         }
 
         // GET: Clientes/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -33,6 +37,7 @@ namespace project.Controllers
         }
 
         // GET: Clientes/Create
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -43,6 +48,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "IDCliente,DNI,NombreApellido,Email,Direccion,Telefono,FechaCreado,FechaActualizado,Active,IDUser")] Cliente cliente)
         {
             if (ModelState.IsValid)
@@ -52,13 +58,14 @@ namespace project.Controllers
                 cliente.FechaActualizado = DateTime.Now;
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("List", "Productoes");
             }
 
             return View(cliente);
         }
 
         // GET: Clientes/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +85,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "IDCliente,DNI,NombreApellido,Email,Direccion,Telefono,FechaCreado,FechaActualizado,Active,IDUser")] Cliente cliente)
         {
             if (ModelState.IsValid)
@@ -85,12 +93,13 @@ namespace project.Controllers
                 cliente.FechaActualizado = DateTime.Now;
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("List", "Productoes");
             }
             return View(cliente);
         }
 
         // GET: Clientes/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +117,7 @@ namespace project.Controllers
         // POST: Clientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Cliente cliente = db.Clientes.Find(id);
@@ -125,18 +135,9 @@ namespace project.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult ProfileUser(int? id)
+        public ActionResult ProfileUser(string id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cliente cliente = db.Clientes.Find(id);
-            if (cliente == null)
-            {
-                return HttpNotFound();
-            }
-            return View(cliente);
+            return View(_entidad.viewDetailsProfile(id));
         }
     }
 }

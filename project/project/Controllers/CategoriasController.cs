@@ -10,16 +10,18 @@ using project.Models;
 
 namespace project.Controllers
 {
+
     public class CategoriasController : Controller
     {
         private Modelo db = new Modelo();
 
         // GET: Categorias
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Categorias.ToList());
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Categorias/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,7 +36,7 @@ namespace project.Controllers
             }
             return View(categoria);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Categorias/Create
         public ActionResult Create()
         {
@@ -46,6 +48,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "IDCategoria,Nombre,Detalle,FechaCreado,FechaActualizado")] Categoria categoria)
         {
             if (ModelState.IsValid)
@@ -61,6 +64,7 @@ namespace project.Controllers
         }
 
         // GET: Categorias/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +84,7 @@ namespace project.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "IDCategoria,Nombre,Detalle,FechaCreado,FechaActualizado")] Categoria categoria)
         {
             if (ModelState.IsValid)
@@ -93,6 +98,7 @@ namespace project.Controllers
         }
 
         // GET: Categorias/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +116,7 @@ namespace project.Controllers
         // POST: Categorias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Categoria categoria = db.Categorias.Find(id);
