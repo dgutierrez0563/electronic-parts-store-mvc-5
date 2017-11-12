@@ -1,0 +1,57 @@
+﻿@model IEnumerable<electronic_store.Models.DetalleFactura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaCreado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaActualizado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrecioProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaActualizado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDDetalle }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDDetalle }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDDetalle })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,54 @@
+﻿
+@model electronic_store.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Assign Role to User";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
+        <h1 class="panel-title text-center" style="font-size:20px;">Asignar Role</h1>
+    </div>
+</div>
+
+@using (Html.BeginForm("RegisterRole", "Account", FormMethod.Post, new { @class = "form-horizontal", RoleManagerEventArgs = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">Assign Role to User</h2>
+        </div>
+        <div class="panel-body">
+            <!-- Select role type for the user -->
+            <div class="form-group">
+                @Html.Label("Account Name", new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownList("UserName", null, "SELECT ACCOUNT", htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <!-- Select name user for the role -->
+            <div class="form-group">
+                @Html.Label("Role Type", new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownList("Name", null, "SELECT ROLE", htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <!-- Summit operation here -->
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-success" value="Assign" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@*<a class="btn btn-primary btn-sm" style="font-size:15px;" @Html.ActionLink("Back To List", "ProfileRoles", "Role")
+        </a>*@
+<div>
+    @*<a class="btn btn-primary btn-sm" style="font-size:13px;" href="~/Role/ProfileRoles">Back To List</a>*@
+    <a class="btn btn-primary btn-sm" style="font-size:13px;" href="~/Role/ProfileRoles">Back To List</a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

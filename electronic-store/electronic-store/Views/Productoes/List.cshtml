@@ -1,0 +1,112 @@
+﻿
+@model IEnumerable<electronic_store.Models.Producto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List Products</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <br />
+        <div class="form-group">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Product Name" name="productName">
+                    <span class="input-group-btn">
+                        <button type="submit" value="Search" class="btn btn-success">Search</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Category Name" name="categoryName">
+                    <span class="input-group-btn">
+                        <button type="submit" value="Search" class="btn btn-success">Search</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div>
+                    <input type="text" class="form-control" placeholder="Price Initial" name="priceInitial">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Price Final" name="priceFinal">
+                    <span class="input-group-btn">
+                        <button type="submit" value="Search" class="btn btn-success">Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+    </div>
+}
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Stock
+        </th>
+        <th>
+            Category Name
+        </th>
+        <th>
+            Supplier Name
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.FechaCreado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaActualizado)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                $ @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorias.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proveedors.Nombre)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.FechaCreado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaActualizado)
+                </td>*@
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.IDProducto }) |
+                @Html.ActionLink("Add To Car", "AddToCar", "ShopCars", new { id = item.IDProducto }, null)
+            </td>
+        </tr>
+    }
+
+</table>

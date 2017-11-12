@@ -1,0 +1,78 @@
+﻿@model electronic_store.Models.Proveedor
+
+@{
+    ViewBag.Title = "Supplier Details";
+}
+
+<div class="nav navbar-default">
+    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
+        <h1 class="panel-title text-center" style="font-size:20px;color:white">Product Datails</h1>
+    </div>
+</div>
+<br />
+<div class="form-horizontal panel panel-primary">
+    <fieldset>
+        <div class="nav navbar-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Information of @Html.DisplayFor(model => model.Nombre)</h3>
+            </div>
+        </div>
+        <br />
+        <div class="panel-body">
+            <dl class="dl-horizontal table-hover">
+                <dt>
+                    Supplier Name:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt>
+                    Representative:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Representante)
+                </dd>
+                <dt>
+                    E-Mail:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt>
+                    Phone Number:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
+                <dt>
+                    Address:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
+                <dt>
+                    Details:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Detalle)
+                </dd>
+                <dt>
+                    Create At:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaCreado)
+                </dd>
+                <dt>
+                    Update At:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaActualizado)
+                </dd>
+            </dl>
+        </div>
+    </fieldset>
+</div>
+<p>
+    <a class="btn btn-primary btn-sm" style="font-size:13px;" href="~/Proveedors/Index">Back To Index</a>
+    <a class="btn btn-warning btn-sm" style="font-size:13px;" href="~/Proveedors/Edit/@Model.IDProveedor">Edit Information</a>
+</p>

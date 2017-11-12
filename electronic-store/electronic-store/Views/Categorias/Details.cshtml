@@ -1,0 +1,61 @@
+﻿@model electronic_store.Models.Categoria
+
+@{
+    ViewBag.Title = "Details Category";
+}
+
+<div class="nav navbar-default">
+    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
+        <h1 class="panel-title text-center" style="font-size:20px;color:white">Details Category</h1>
+    </div>
+</div>
+<br />
+<div class="form-horizontal panel panel-primary">
+    <fieldset>
+        <div class="nav navbar-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Information of @Html.DisplayFor(model => model.Nombre)</h3>
+            </div>
+        </div>
+        <br />
+        <div class="panel-body">
+            <dl class="dl-horizontal table-hover">
+                <dt>
+                    Category Name:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    Details:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Detalle)
+                </dd>
+
+                <dt>
+                    Create At:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FechaCreado)
+                </dd>
+
+                <dt>
+                    Update At:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FechaActualizado)
+                </dd>
+            </dl>
+        </div>
+    </fieldset>
+</div>
+<p>
+    <a class="btn btn-primary btn-sm" style="font-size:13px;" href="~/Categorias/Index">Back To Index</a>
+    <a class="btn btn-warning btn-sm" style="font-size:13px;" href="~/Categorias/Edit/@Model.IDCategoria">Edit Information</a>
+</p>

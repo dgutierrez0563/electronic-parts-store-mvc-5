@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "AddToCar";
+}
+
+<h2 class="text-center">Mi Carrito</h2>
+<table>
+    <tr>
+        <td>#</td>
+        <td>Product Name</td>
+        <td>Price/U</td>
+        <td>Quantity</td>
+        <td>Total</td>
+        <td>Action</td>
+        @*<td>Date</td>*@
+
+    </tr>
+
+    <tbody>
+        @{
+            int auxNum = 0;
+            double TotalToPay = 0;
+        }
+        @if (Session["list"] != null)
+        {
+            foreach (var item in Session["list"] as List<electronic_store.Models.ShopCar>)
+            {
+                TotalToPay += (double)(item.Cantidad * item.Producto.Precio);
+                <tr>
+                    <td>@(auxNum=auxNum + 1)</td>
+                    <td>@item.Producto.Nombre</td>
+                    <td>@string.Format("{0:C}", item.Producto.Precio)</td>
+                    <td>@item.Cantidad</td>
+                    <td>@string.Format("{0:C}", (item.Cantidad * item.Producto.Precio))</td>
+                    @*<td>@item.Producto.FechaCreado</td>*@
+                    <td>@Html.ActionLink("Delete", "Delete", "ShopCars", new { Id = item.Producto.IDProducto }, null) | 
+                        <a class="fa fa-minus-square" aria-hidden="true" href="~/ShopCars/Delete/@item.Producto.IDProducto"></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4">Total</th>
+            <th>@string.Format("{0:C}", TotalToPay)</th>
+        </tr>
+    </tfoot>
+</table>
+<div>
+    <a class="btn btn-primary btn-sm" style="font-size:11px;" href="~/Productoes/List">Back To List</a>
+</div>
+<a class="btn btn-warning btn-xs" href="#">Continue Buying</a>
+<a class="btn btn-info btn-xs" href="#">Finish Purchase</a>
+@*@Html.ActionLink("Seguir Comprando", "Index", "Comprar", null, null) |
+@Html.ActionLink("Terminar compra", "FinalizarCompra", "Carrito", null, null)*@
