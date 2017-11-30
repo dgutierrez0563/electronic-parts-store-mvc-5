@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "_Products";
+}
+
+<h2>_Products</h2>
+
+<table id="Productoes" class="table table-responsive table-hover">
+    <thead>
+        <tr class="info">
+            <th>
+                ID
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Supplier
+            </th>
+            <th>
+                Unit Price
+            </th>
+            <th>
+                Stock
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Update
+            </th>
+            @*<th class="text-center">Actions</th>*@
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css" />
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+
+
+@section Scripts {
+    @*<script src="~/Scripts/global_plugin.js"></script>*@
+    <script type="text/javascript" src="//cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#Productoes').DataTable({
+                "processing": true,
+                "searching": true,
+                "responsive": true,
+                "ajax": {
+                    "url": "/Productoes/_Productos",
+                    "type": "GET",
+                    "contentType": "application/json; charset=utf-8",
+                    "dataType": "json"
+
+                },
+                "columns": [
+                    { "data": "IDProducto", "autoWidth": true },
+                    { "data": "Nombre", "autoWidth": true },
+                    { "data": "Precio", "autoWidth": true },
+                    { "data": "IDCategoria", "autoWidth": true },
+                    { "data": "IDProveedor", "autoWidth": true },
+                    { "data": "Stock", "autoWidth": true },
+                    { "data": "FechaCreado", "autoWidth": true },
+                    { "data": "FechaActualizado", "autoWidth": true }
+                    //{ "data": null, "defaultContent": "<button id='view' class='btn btn-small btn-info'>View</button><button id='delete' class='btn btn-small btn-danger'>Delete</button>", "className": "align-center" }
+                ]
+            });
+        });
+
+        //$(document).ready(function () {
+        //    $.ajax: ({
+        //        "url": "/Productoes/_Productos",
+        //        "type": "GET",
+        //        "contentType": "application/json; charset=utf-8",
+        //        "dataType": "json",
+        //        "success": function(json){
+        //            $('#Productoes').DataTable({
+        //                "columns": [
+        //                    { "data": "IDProducto", "autoWidth": true },
+        //                    { "data": "Nombre", "autoWidth": true },
+        //                    { "data": "Precio", "autoWidth": true },
+        //                    { "data": "IDCategoria", "autoWidth": true },
+        //                    { "data": "IDProveedor", "autoWidth": true },
+        //                    { "data": "Stock", "autoWidth": true },
+        //                    { "data": "FechaCreado", "autoWidth": true },
+        //                    { "data": "FechaActualizado", "autoWidth": true }
+        //                ], "aaData": json.d.aaData
+        //            });
+        //        }
+        //        //{ "data": null, "defaultContent": "<button id='view' class='btn btn-small btn-info'>View</button><button id='delete' class='btn btn-small btn-danger'>Delete</button>", "className": "align-center" }
+        //    });
+        //});
+        //});
+
+        //$(document).ready(function () {
+        //    $.ajax({
+        //        "url": "Productoes/_Productos",
+        //        "type": "GET",
+        //        "contentType": "application/json; charset=utf-8",
+        //        "dataType": "json",
+        //        "success": function (json) {
+        //            $('#Productoes').DataTable({
+        //                "columns": [
+        //                    { "data": "IDProducto", "autoWidth": true },
+        //                    { "data": "Nombre", "autoWidth": true },
+        //                    { "data": "Precio", "autoWidth": true },
+        //                    { "data": "IDCategoria", "autoWidth": true },
+        //                    { "data": "IDProveedor", "autoWidth": true },
+        //                    { "data": "Stock", "autoWidth": true },
+        //                    { "data": "FechaCreado", "autoWidth": true },
+        //                    { "data": "FechaActualizado", "autoWidth": true }
+        //                ], "aaData": $.parseJSON(json.d)
+        //            });
+        //        }
+        //    });
+        //});
+    </script>
+}

@@ -1,0 +1,134 @@
+﻿
+@model IEnumerable<electronic_store.Models.Factura>
+@{
+    ViewBag.Title = "Invoice History";
+}
+<link href="~/Content/datepicker.min.css" rel="stylesheet" type="text/css" />
+@{
+    string user = User.Identity.Name;
+}
+@using (Html.BeginForm())
+{    <br />
+    <div class="row">
+        <div class="navbar navbar-default" style="margin-top:20px;">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div>
+                        @Html.ActionLink("< HOME >", "LayoutAdmin", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Customer", "Index", "Clientes")</li>
+                        <li>@Html.ActionLink("Category", "Index", "Categorias")</li>
+                        <li>@Html.ActionLink("Product", "Index", "Productoes")</li>
+                        <li>@Html.ActionLink("Attribute", "Index", "Atributoes")</li>
+                        <li>@Html.ActionLink("Supplier", "Index", "Proveedors")</li>
+                        <li>@Html.ActionLink("Role", "ProfileRoles", "Role")</li>
+                        <li>@Html.ActionLink("Search Products", "List", "Productoes")</li>
+                        <li>@Html.ActionLink("Report Invoices", "AllFacturas", "Facturas")</li>
+                        <li>@Html.ActionLink("All Collections", "viewAllCollections", "Productoes")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <fieldset>
+        <legend>Search By Date</legend>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <div>
+                        <input id="datepicker1" type="datetime" class="form-control" data-date-format="dd-mm-yyyy" placeholder="Date Initial (dd/mm/yyyy)" name="dateInitial" autocomplete="off" required />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input id="datepicker2" type="datetime" class="form-control" data-date-format="dd-mm-yyyy" placeholder="Date Final (dd/mm/yyyy)" name="dateFinal" autocomplete="off" required />
+                        @*<input id="datetimepicker" type="datetime" class="form-control" data-date-format="dd-mm-yyyy" placeholder="Date Final (dd/mm/yyyy)" name="dateFinal" autocomplete="off" required >*@
+                        <span class="input-group-btn">
+                            <button type="submit" value="Search" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <br />
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">Invoice Information - Report History</h2>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr class="info">
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Customer
+                        </th>
+                        <th>
+                            Invoice Date
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                    </tr>
+                </thead>
+                @{
+                    int aux = 0;
+                    double total = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @(aux = aux + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cliente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaCreado)
+                        </td>
+                        <td>
+                            @string.Format("{0:C}", (item.TotalFactura))
+                        </td>
+                        <td style="display:none;">@(total = total + item.TotalFactura)</td>
+                    </tr>
+                }
+                <tfoot>
+                    <tr style="font-weight:bold;">
+                        <td colspan="3">Total Revenue</td>
+                        <td>
+                            @string.Format("{0:C}", (total))
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>}
+
+@section Scripts {
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#datepicker1").datepicker(
+                {
+                    autoclose: true,
+                    todayHighlight: true,
+                    autoSize: true,
+                    refresh: true
+                });//.datepicker("setDate", new Date());
+            $("#datepicker2").datepicker(
+            {
+                autoclose: true,
+                todayHighlight: true,
+                autoSize: true,
+                refresh: true
+            });//.datepicker("setDate", new Date());
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

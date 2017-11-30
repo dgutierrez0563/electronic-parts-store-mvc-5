@@ -3,9 +3,11 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using electronic_store.Models;
+using System;
 
 namespace electronic_store.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class ProveedorsController : Controller
     {
         private Contexto db = new Contexto();
@@ -46,6 +48,8 @@ namespace electronic_store.Controllers
         {
             if (ModelState.IsValid)
             {
+                proveedor.FechaCreado = DateTime.Now;
+                proveedor.FechaActualizado = DateTime.Now;
                 db.Proveedors.Add(proveedor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,6 +82,7 @@ namespace electronic_store.Controllers
         {
             if (ModelState.IsValid)
             {
+                proveedor.FechaActualizado = DateTime.Now;
                 db.Entry(proveedor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

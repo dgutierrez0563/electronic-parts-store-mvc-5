@@ -49,9 +49,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -112,9 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -171,6 +174,7 @@
     <Compile Include="Controllers\AtributoesController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\DetalleFacturasController.cs" />
     <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -180,6 +184,75 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShopCarsController.cs" />
     <Compile Include="Controllers\WishlistsController.cs" />
+    <Compile Include="DataModel\Model_DO.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_DO.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Model_DO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\Model_DO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_DO.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProfileRoleUser_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ReportSales_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewAccesorios_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewCase_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewDetailsInvoice_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewDetailsProductos_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewDetailsProducto_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewDiscoDuro_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewFuentePoder_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewMonitor_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewPerifericos_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewProcesadorAMD_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewProcesadorIntel_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewProcesador_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewRam_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaMadre_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideo_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewWishlistUser_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,8 +273,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datepicker.min.css" />
     <Content Include="Content\Images\almacenamiento.jpg" />
     <Content Include="Content\Images\cases.jpg" />
     <Content Include="Content\Images\enfriamiento-liquido.jpg" />
@@ -230,26 +306,86 @@
     <Content Include="Content\Images\tarjetas-de-video.jpg" />
     <Content Include="Content\Images\teclados.jpg" />
     <Content Include="Content\Images\ventiladores.jpg" />
+    <Content Include="DataModel\Model_DO.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_DO.edmx</DependentUpon>
+      <LastGenOutput>Model_DO.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModel\Model_DO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_DO.edmx</DependentUpon>
+      <LastGenOutput>Model_DO.cs</LastGenOutput>
+    </Content>
+    <Content Include="dataTable\css\dataTables.bootstrap.css" />
+    <Content Include="dataTable\css\dataTables.bootstrap.min.css" />
+    <Content Include="dataTable\css\dataTables.bootstrap4.css" />
+    <Content Include="dataTable\css\dataTables.bootstrap4.min.css" />
+    <Content Include="dataTable\css\dataTables.foundation.css" />
+    <Content Include="dataTable\css\dataTables.foundation.min.css" />
+    <Content Include="dataTable\css\dataTables.jqueryui.css" />
+    <Content Include="dataTable\css\dataTables.jqueryui.min.css" />
+    <Content Include="dataTable\css\dataTables.semanticui.css" />
+    <Content Include="dataTable\css\dataTables.semanticui.min.css" />
+    <Content Include="dataTable\css\jquery.dataTables.css" />
+    <Content Include="dataTable\css\jquery.dataTables.min.css" />
+    <Content Include="dataTable\images\sort_asc.png" />
+    <Content Include="dataTable\images\sort_asc_disabled.png" />
+    <Content Include="dataTable\images\sort_both.png" />
+    <Content Include="dataTable\images\sort_desc.png" />
+    <Content Include="dataTable\images\sort_desc_disabled.png" />
+    <Content Include="dataTable\js\dataTables.bootstrap.js" />
+    <Content Include="dataTable\js\dataTables.bootstrap.min.js" />
+    <Content Include="dataTable\js\dataTables.bootstrap4.js" />
+    <Content Include="dataTable\js\dataTables.bootstrap4.min.js" />
+    <Content Include="dataTable\js\dataTables.foundation.js" />
+    <Content Include="dataTable\js\dataTables.foundation.min.js" />
+    <Content Include="dataTable\js\dataTables.jqueryui.js" />
+    <Content Include="dataTable\js\dataTables.jqueryui.min.js" />
+    <Content Include="dataTable\js\dataTables.semanticui.js" />
+    <Content Include="dataTable\js\dataTables.semanticui.min.js" />
+    <Content Include="dataTable\js\jquery.dataTables.js" />
+    <Content Include="dataTable\js\jquery.dataTables.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootswatch.less" />
     <Content Include="Content\variables.less" />
     <Content Include="Content\_bootswatch.scss" />
     <Content Include="Content\_variables.scss" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <EntityDeploy Include="DataModel\Model_DO.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_DO.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataModel\Model_DO.edmx.diagram">
+      <DependentUpon>Model_DO.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\global_plugin.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -334,17 +470,43 @@
     <Content Include="Views\Account\RegisterRole.cshtml" />
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Home\LayoutAdmin.cshtml" />
+    <Content Include="Views\ShopCars\PurchaseIncomple.cshtml" />
+    <Content Include="Views\Consultas\Accesorios.cshtml" />
+    <Content Include="Views\Consultas\DetailsProduct.cshtml" />
+    <Content Include="Views\Consultas\Case.cshtml" />
+    <Content Include="Views\Consultas\DiscoDuro.cshtml" />
+    <Content Include="Views\Consultas\FuentePoder.cshtml" />
+    <Content Include="Views\Consultas\Monitor.cshtml" />
+    <Content Include="Views\Consultas\Perifericos.cshtml" />
+    <Content Include="Views\Consultas\Procesador.cshtml" />
+    <Content Include="Views\Consultas\ProcesadorAmd.cshtml" />
+    <Content Include="Views\Consultas\ProcesadorIntel.cshtml" />
+    <Content Include="Views\Consultas\Ram.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMadre.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideo.cshtml" />
+    <Content Include="Views\Wishlists\WishlistIncomplete.cshtml" />
+    <Content Include="Views\Wishlists\WishListUser.cshtml" />
+    <Content Include="Views\Wishlists\viewWishlist.cshtml" />
+    <Content Include="Views\Role\ProfileRoles.cshtml" />
+    <Content Include="Views\Facturas\viewInvoiceUser.cshtml" />
+    <Content Include="Views\Facturas\viewDatailsInvoice.cshtml" />
+    <Content Include="Views\Productoes\viewAllCollections.cshtml" />
+    <Content Include="Views\Facturas\ErrorInvoice.cshtml" />
+    <Content Include="Views\Productoes\_Products.cshtml" />
+    <Content Include="Views\Facturas\AllFacturas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

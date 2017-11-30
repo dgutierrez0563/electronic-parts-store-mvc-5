@@ -10,6 +10,7 @@ using electronic_store.Models;
 
 namespace electronic_store.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class DetalleFacturasController : Controller
     {
         private Contexto db = new Contexto();

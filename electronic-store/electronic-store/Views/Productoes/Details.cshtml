@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Product Datails";
 }
+<br />
 <div class="nav navbar-default">
     <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
         <h1 class="panel-title text-center" style="font-size:20px;color:white">Product Datails</h1>
@@ -55,7 +56,10 @@
                 </dt>
 
                 <dd>
-                    $ @Html.DisplayFor(model => model.Precio)
+                    @{ 
+                        string price = string.Format("{0:C}", Model.Precio);
+                    }
+                    @Html.DisplayFor(model => @price)
                 </dd>
 
                 <dt>

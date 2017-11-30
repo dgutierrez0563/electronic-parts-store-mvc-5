@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<electronic_store.DataModel.ProfileRoleUser_Result>
+@{
+    ViewBag.Title = "Control of Roles";
+}
+
+<br />
+<div class="row">
+    <div class="navbar navbar-default" style="margin-top:20px;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div>
+                    @Html.ActionLink("< HOME >", "LayoutAdmin", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Customer", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Category", "Index", "Categorias")</li>
+                    <li>@Html.ActionLink("Product", "Index", "Productoes")</li>
+                    <li>@Html.ActionLink("Attribute", "Index", "Atributoes")</li>
+                    <li>@Html.ActionLink("Supplier", "Index", "Proveedors")</li>
+                    <li>@Html.ActionLink("Role", "ProfileRoles", "Role")</li>
+                    <li>@Html.ActionLink("Search Products", "List", "Productoes")</li>
+                    <li>@Html.ActionLink("Report Invoices", "AllFacturas", "Facturas")</li>
+                    <li>@Html.ActionLink("All Collections", "viewAllCollections", "Productoes")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Roles Profile - Roles Control</h2>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <a class="btn btn-success btn-sm" style="font-size:12px;" href="~/Role/Create">Create New Role</a>
+            <a class="btn btn-warning btn-sm" style="font-size:12px;" href="~/Account/RegisterRole">Assing Role to User</a>
+            <br />
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr class="info">
+                    <th>User Name</th>
+                    <th>Role Name</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr class="warning">
+                        <td>@item.User_Name</td>
+                        <td>@item.Role_Name</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

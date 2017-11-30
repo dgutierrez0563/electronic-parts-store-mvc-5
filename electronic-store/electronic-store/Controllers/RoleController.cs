@@ -2,10 +2,13 @@
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity.EntityFramework;
 using electronic_store.Models;
+using electronic_store.DataModel;
 //using electronic_store.ModelDO;
 
 namespace electronic_store.Controllers
 {
+
+    [Authorize(Roles = "Administrator")]
     public class RoleController : Controller
     {
         /// <summary>
@@ -72,12 +75,15 @@ namespace electronic_store.Controllers
                 return View();
             }
         }
-
-        //[Authorize(Roles = "Administrator")]
-        //public ActionResult ProfileRoles()
-        //{
-
-        //    return View(_list.ProfileRoleUser());
-        //}       
+        /// <summary>
+        /// View Profile User
+        /// </summary>
+        /// <returns></returns>
+        [Authorize(Roles = "Administrator")]
+        public ActionResult ProfileRoles()
+        {
+            electronic_sotore_Entities _entidad = new electronic_sotore_Entities();
+            return View(_entidad.ProfileRoleUser());
+        }
     }
 }

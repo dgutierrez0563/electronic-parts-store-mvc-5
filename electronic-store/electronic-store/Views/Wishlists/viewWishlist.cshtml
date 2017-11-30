@@ -1,0 +1,67 @@
+﻿@model IEnumerable<electronic_store.DataModel.viewWishlistUser_Result>
+@{
+    ViewBag.Title = "Manage Wish List";
+}
+<br />
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
+        <h1 class="panel-title text-center" style="font-size:20px;">Manage Wish List</h1>
+    </div>
+</div>
+@{
+    string user = User.Identity.Name;
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Information of Products - Wish List of @user</h2>
+    </div>
+    <div class="panel-body">
+        <br />
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="info">
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Price/U</th>
+                    <th>Create At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tbody>
+                @{
+                    int auxNum = 0;
+                    double TotalToPay = 0;
+                }
+                @foreach (var item in Model)
+                {
+                    TotalToPay = TotalToPay + item.Precio;
+                    <tr>
+                        <td>@(auxNum = auxNum + 1)</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>@string.Format("{0:C}", item.Precio)</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaCreado)
+                        </td>
+                        <td class="btn-group-xs text-center">
+                            <a class="btn btn-danger btn-xs" href="~/Wishlists/DeleteAt/@item.IDWishlist"><span class="glyphicon glyphicon-remove"></span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Total</th>
+                    <th>@string.Format("{0:C}", TotalToPay)</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="btn btn-group">
+            <a class="btn btn-primary btn-sm" style="font-size:11px;" href="~/Home/Index">Back To Home</a>            
+        </div>
+    </div>
+</div>

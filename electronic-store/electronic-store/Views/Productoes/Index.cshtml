@@ -3,23 +3,40 @@
 @{
     ViewBag.Title = "Product Control";
 }
-
-<div class="panel panel-primary">
-    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
-        <h1 class="panel-title text-center" style="font-size:20px;">Product Control</h1>
+<br />
+<div class="row">
+    <div class="navbar navbar-default" style="margin-top:20px;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div>
+                    @Html.ActionLink("< HOME >", "LayoutAdmin", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Customer", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Category", "Index", "Categorias")</li>
+                    <li>@Html.ActionLink("Product", "Index", "Productoes")</li>
+                    <li>@Html.ActionLink("Attribute", "Index", "Atributoes")</li>
+                    <li>@Html.ActionLink("Supplier", "Index", "Proveedors")</li>
+                    <li>@Html.ActionLink("Role", "ProfileRoles", "Role")</li>
+                    <li>@Html.ActionLink("Search Products", "List", "Productoes")</li>
+                    <li>@Html.ActionLink("Report Invoices", "AllFacturas", "Facturas")</li>
+                    <li>@Html.ActionLink("All Collections", "viewAllCollections", "Productoes")</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h2 class="panel-title">Product Information</h2>
+        <h2 class="panel-title">Product Information - Products Control</h2>
     </div>
     <div class="panel-body">
         <div class="form-group">
             <a class="btn btn-success btn-sm" style="font-size:12px;" href="~/Productoes/Create">Create New Product</a>
             <br />
         </div>
-        <table class="table table-striped table-hover">
+        <table id="dataTables1" class="table table-bordered table-hover">
             <thead>
                 <tr class="info">
                     <th>
@@ -37,7 +54,7 @@
                     <th>
                         Stock
                     </th>
-                    <th class="text-center">Actions</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             @foreach (var item in Model)
@@ -53,21 +70,38 @@
                         @Html.DisplayFor(modelItem => item.Proveedors.Nombre)
                     </td>
                     <td>
-                        $ @Html.DisplayFor(modelItem => item.Precio)
+                        @string.Format("{0:C}", @item.Precio)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Stock)
                     </td>
-                    <td class="btn btn-group text-center">
-                        <a class="btn btn-info btn-xs" style="font-size:11px;" href="~/Productoes/Details/@item.IDProducto">View</a>
-                        <a class="btn btn-warning btn-xs" style="font-size:11px;" href="~/Productoes/Edit/@item.IDProducto">Edit</a>
-                        <a class="btn btn-danger btn-xs" style="font-size:11px;" href="~/Productoes/Delete/@item.IDProducto">Delete</a>
+                    <td class="btn-group-xs text-center">
+                        <a class="btn btn-info btn-xs" style="font-size:11px;" href="~/Productoes/Details/@item.IDProducto"><span class="glyphicon glyphicon-eye-open"></span></a>
+                        <a class="btn btn-warning btn-xs" style="font-size:11px;" href="~/Productoes/Edit/@item.IDProducto"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a class="btn btn-danger btn-xs" style="font-size:11px;" href="~/Productoes/Delete/@item.IDProducto"><span class="glyphicon glyphicon-remove"></span></a>
                     </td>
                 </tr>
             }
         </table>
     </div>
 </div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+
+@section Scripts{
+    <script type="text/javascript" src="~/dataTable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/dataTable/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/dataTable/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/dataTable/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#dataTables1").dataTable();
+            //$('#dataTables1').dataTable({
+            //    "bPaginate": true,
+            //    "bLengthChange": true,
+            //    "bFilter": true,
+            //    "bSort": true,
+            //    "bInfo": true,
+            //    "bAutoWidth": true
+            //});
+        });
+    </script>
 }

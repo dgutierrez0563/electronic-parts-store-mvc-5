@@ -2,54 +2,64 @@
 @{
     ViewBag.Title = "Items In Car";
 }
+<br />
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top:25px;padding-bottom:25px;">
+        <h1 class="panel-title text-center" style="font-size:20px;">Items In Car</h1>
+    </div>
+</div>
 
-<h2 class="text-center">Items In Car</h2>
-
-<table>
-    <tr>
-        <td>#</td>
-        <td>Product Name</td>
-        <td>Price/U</td>
-        <td>Quantity</td>
-        <td>Total</td>
-        <td>Action</td>
-        @*<td>Date</td>*@
-
-    </tr>
-
-    <tbody>
-        @{
-            int auxNum = 0;
-            double TotalToPay = 0;
-        }
-        @if (Session["list"] != null)
-        {
-            foreach (var item in Session["list"] as List<electronic_store.Models.ShopCar>)
-            {
-                TotalToPay += (double)(item.Cantidad * item.Producto.Precio);
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title">Information of Products</h2>
+    </div>
+    <div class="panel-body">
+        <br />
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="info">
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Price/U</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int auxNum = 0;
+                    double TotalToPay = 0;
+                }
+                @if (Session["list"] != null)
+                {
+                    foreach (var item in Session["list"] as List<electronic_store.Models.ShopCar>)
+                    {
+                        TotalToPay += (double)(item.Cantidad * item.Producto.Precio);
+                        <tr>
+                            <td>@(auxNum = auxNum + 1)</td>
+                            <td>@item.Producto.Nombre</td>
+                            <td>@string.Format("{0:C}", item.Producto.Precio)</td>
+                            <td>@item.Cantidad</td>
+                            <td>@string.Format("{0:C}", (item.Cantidad * item.Producto.Precio))</td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="~/ShopCars/Delete/@item.Producto.IDProducto"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
                 <tr>
-                    <td>@(auxNum = auxNum + 1)</td>
-                    <td>@item.Producto.Nombre</td>
-                    <td>@string.Format("{0:C}", item.Producto.Precio)</td>
-                    <td>@item.Cantidad</td>
-                    <td>@string.Format("{0:C}", (item.Cantidad * item.Producto.Precio))</td>
-                    @*<td>@item.Producto.FechaCreado</td>*@
-                    <td>
-                        @Html.ActionLink("Delete", "Delete", "ShopCars", new { Id = item.Producto.IDProducto }, null) |
-                    <a class="btn btn-danger btn-xs" href="~/ShopCars/Delete/@item.Producto.IDProducto"><span class="fa fa-minus-square" aria-hidden="true"></span></a>
-                </td>
-            </tr>
-            }
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="4">Total</th>
-            <th>@string.Format("{0:C}", TotalToPay)</th>
-        </tr>
-    </tfoot>
-</table>
-<div class="btn btn-group">
-    <a class="btn btn-primary btn-sm" style="font-size:11px;" href="~/Productoes/List">Back To List</a>    
-    <a class="btn btn-success btn-sm" style="font-size:11px;" href="~/ShopCars/FinishPurchase">Finish Purchase</a>
+                    <th colspan="4">Total</th>
+                    <th>@string.Format("{0:C}", TotalToPay)</th>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="btn btn-group">
+            <a class="btn btn-primary btn-sm" style="font-size:11px;" href="~/Home/Index">Back To Home</a>
+            <a class="btn btn-success btn-sm" style="font-size:11px;" href="~/ShopCars/FinishPurchase">Finish Purchase</a>
+        </div>
+    </div>
 </div>

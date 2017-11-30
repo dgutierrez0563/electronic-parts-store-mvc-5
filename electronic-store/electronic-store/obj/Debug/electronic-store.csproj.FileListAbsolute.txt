@@ -64,6 +64,6 @@ C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzad
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\obj\Debug\electronic-store.csprojResolveAssemblyReference.cache
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\obj\Debug\electronic-store.dll
 C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\obj\Debug\electronic-store.pdb
+C:\Users\w.sullivan\Documents\Visual Studio 2015\Projects\Labs Lenguajes Avanzados\electronic-store\electronic-store\obj\Debug\electronic-store.csprojResolveAssemblyReference.cache

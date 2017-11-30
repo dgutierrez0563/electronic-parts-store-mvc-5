@@ -2,33 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - Electronic Store</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/dataTable/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/dataTable/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/dataTable/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/dataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
     @using Microsoft.AspNet.Identity
 </head>
 <body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>*@
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -38,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("< PC SHOP >", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("< Electronic Store >", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,21 +37,25 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panel Control<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Profile Customer<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Customer", "Index", "Clientes")</li>
-                            <li>@Html.ActionLink("Category", "Index", "Categorias")</li>
-                            <li>@Html.ActionLink("Product", "Index", "Productoes")</li>
-                            <li>@Html.ActionLink("Attribute", "Index", "Atributoes")</li>
-                            <li>@Html.ActionLink("Supplier", "Index", "Proveedors")</li>
-                            <li>@Html.ActionLink("Role", "ProfileRoles", "Role")</li>
-                            <li>@Html.ActionLink("Product List", "List", "Productoes")</li>
-                            <li>@Html.ActionLink("Create Customer", "Create", "Clientes")</li>
-                            @{
-                                string idUser = User.Identity.GetUserName();
-                            }
+                            <li>@Html.ActionLink("Invoices", "viewInvoiceUser", "Facturas")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li class="divider"></li>
                         </ul>
                     </li>
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Wish And Car<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a type="button" class="btn btn-default btn-sm" href="~/ShopCars/Index"><spam class="glyphicon glyphicon-shopping-cart "></spam></a>
+                                </li>
+                                <li>
+                                    <a type="button" class="btn btn-default btn-sm" href="~/Wishlists/viewWishlist"><spam class="glyphicon glyphicon-heart "></spam></a>
+                                </li>
+                            </ul>
+                        </li>*@
                     @*<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Customer Profile<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -82,11 +70,23 @@
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        @{
+                            string productName = "";
+                        }
+                        <input type="text" class="form-control" placeholder="Product Name" name="productName">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" value="Search" class="btn btn-success" href="~/Productoes/List/@productName">Search</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right" style="margin-right:15px;">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a type="button" class="btn btn-default btn-xs" href="~/ShopCars/Index"><spam class="glyphicon glyphicon-shopping-cart" style="color:yellow;font-size:18px;"></spam></a>
+                    </li>
+                    <li>
+                        <a type="button" class="btn btn-default btn-xs" href="~/Wishlists/viewWishlist"><spam class="glyphicon glyphicon-heart" style="color:red; font-size:18px;"></spam></a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right" style="margin-right:30px;">
                     @Html.Partial("_LoginPartial")
                 </ul>
             </div>
@@ -102,7 +102,6 @@
             <!-- /.container -->
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

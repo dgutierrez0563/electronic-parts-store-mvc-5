@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using electronic_store.Models;
+using System;
 
 namespace electronic_store.Controllers
 {
@@ -11,6 +12,7 @@ namespace electronic_store.Controllers
         private Contexto db = new Contexto();
 
         // GET: Clientes
+        [Authorize(Roles = "Administrator")]
         public ActionResult Index()
         {
             return View(db.Clientes.ToList());
@@ -46,9 +48,12 @@ namespace electronic_store.Controllers
         {
             if (ModelState.IsValid)
             {
+                cliente.active = "Yes";
+                cliente.FechaCreado = DateTime.Now;
+                cliente.FechaActualizado = DateTime.Now;
                 db.Clientes.Add(cliente);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(cliente);
@@ -78,14 +83,16 @@ namespace electronic_store.Controllers
         {
             if (ModelState.IsValid)
             {
+                cliente.FechaActualizado = DateTime.Now;
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(cliente);
         }
 
         // GET: Clientes/Delete/5
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -103,6 +110,7 @@ namespace electronic_store.Controllers
         // POST: Clientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public ActionResult DeleteConfirmed(int id)
         {
             Cliente cliente = db.Clientes.Find(id);

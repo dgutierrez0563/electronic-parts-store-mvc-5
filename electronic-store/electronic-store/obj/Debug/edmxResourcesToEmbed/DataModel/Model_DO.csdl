@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Entities_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="electronic_sotore_Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="ProfileRoleUser" ReturnType="Collection(Entities_Model.ProfileRoleUser_Result)" />
+    <FunctionImport Name="viewAccesorios" ReturnType="Collection(Entities_Model.viewAccesorios_Result)" />
+    <FunctionImport Name="viewCase" ReturnType="Collection(Entities_Model.viewCase_Result)" />
+    <FunctionImport Name="viewDetailsProducto" ReturnType="Collection(Entities_Model.viewDetailsProducto_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewDiscoDuro" ReturnType="Collection(Entities_Model.viewDiscoDuro_Result)" />
+    <FunctionImport Name="viewFuentePoder" ReturnType="Collection(Entities_Model.viewFuentePoder_Result)" />
+    <FunctionImport Name="viewMonitor" ReturnType="Collection(Entities_Model.viewMonitor_Result)" />
+    <FunctionImport Name="viewPerifericos" ReturnType="Collection(Entities_Model.viewPerifericos_Result)" />
+    <FunctionImport Name="viewProcesador" ReturnType="Collection(Entities_Model.viewProcesador_Result)" />
+    <FunctionImport Name="viewProcesadorAMD" ReturnType="Collection(Entities_Model.viewProcesadorAMD_Result)" />
+    <FunctionImport Name="viewProcesadorIntel" ReturnType="Collection(Entities_Model.viewProcesadorIntel_Result)" />
+    <FunctionImport Name="viewRam" ReturnType="Collection(Entities_Model.viewRam_Result)" />
+    <FunctionImport Name="viewTarjetaMadre" ReturnType="Collection(Entities_Model.viewTarjetaMadre_Result)" />
+    <FunctionImport Name="viewTarjetaVideo" ReturnType="Collection(Entities_Model.viewTarjetaVideo_Result)" />
+    <FunctionImport Name="viewDetailsProductos" ReturnType="Collection(Entities_Model.viewDetailsProductos_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="viewWishlistUser" ReturnType="Collection(Entities_Model.viewWishlistUser_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="viewDetailsInvoice" ReturnType="Collection(Entities_Model.viewDetailsInvoice_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReportSales" ReturnType="Collection(Entities_Model.ReportSales_Result)">
+      <Parameter Name="dateInitial" Mode="In" Type="DateTime" />
+      <Parameter Name="dateFinal" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="ProfileRoleUser_Result">
+    <Property Type="String" Name="User_Name" Nullable="false" MaxLength="256" />
+    <Property Type="String" Name="Role_Name" Nullable="false" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="viewAccesorios_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewCase_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewDetailsProducto_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+    <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Detalle" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="viewDiscoDuro_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewFuentePoder_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewMonitor_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewPerifericos_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewProcesador_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewProcesadorAMD_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewProcesadorIntel_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewRam_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaMadre_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideo_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewDetailsProductos_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="NombreProducto" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+    <Property Type="String" Name="NombreAtributo" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="Detalle" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="viewWishlistUser_Result">
+    <Property Type="Int32" Name="IDWishlist" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="FechaCreado" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewDetailsInvoice_Result">
+    <Property Type="DateTime" Name="FacturaFecha" Nullable="false" />
+    <Property Type="String" Name="Cliente" Nullable="true" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Int32" Name="Cantidad" Nullable="false" />
+    <Property Type="Double" Name="PrecioProducto" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ReportSales_Result">
+    <Property Type="DateTime" Name="FechaCreado" Nullable="false" />
+    <Property Type="Double" Name="TotalVentas" Nullable="true" />
+  </ComplexType>
+</Schema>

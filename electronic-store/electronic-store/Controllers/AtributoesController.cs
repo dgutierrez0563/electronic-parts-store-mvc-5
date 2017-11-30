@@ -3,9 +3,11 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using electronic_store.Models;
+using System;
 
 namespace electronic_store.Controllers
 {
+    [Authorize(Roles ="Administrator")]
     public class AtributoesController : Controller
     {
         private Contexto db = new Contexto();
@@ -48,9 +50,11 @@ namespace electronic_store.Controllers
         {
             if (ModelState.IsValid)
             {
+                atributo.FechaCreado = DateTime.Now;
+                atributo.FechaActualizado = DateTime.Now;
                 db.Atributos.Add(atributo);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create","Atributoes");
             }
 
             ViewBag.IDProducto = new SelectList(db.Productoes, "IDProducto", "Nombre", atributo.IDProducto);
@@ -82,6 +86,7 @@ namespace electronic_store.Controllers
         {
             if (ModelState.IsValid)
             {
+                atributo.FechaActualizado = DateTime.Now;
                 db.Entry(atributo).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

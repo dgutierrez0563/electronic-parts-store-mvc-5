@@ -9,15 +9,33 @@ namespace electronic_store.Controllers
 {
     public class ShopCarsController : Controller
     {
+        /// <summary>
+        /// Call Context
+        /// </summary>
         private Contexto db = new Contexto();
 
         // GET: ShopCars
+        /// <summary>
+        /// Index Car List
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             List<ShopCar> shopcar = (List<ShopCar>)Session["list"];
-            return View(shopcar.ToList());
+            if (shopcar != null)
+            {
+                return View(shopcar.ToList());
+            }
+            else {
+                //return RedirectToAction("Index", "Home");
+                return View();
+            }            
         }
-
+        /// <summary>
+        /// Method for add to car
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult AddToCar(int id)
         {
 
@@ -43,63 +61,82 @@ namespace electronic_store.Controllers
                     Session["list"] = shopcar;
                 }                
             }
-            return RedirectToAction("List","Productoes");
+            return RedirectToAction("Index");
         }
-
+        /// <summary>
+        /// Delete ID of Products List
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Delete(int id)
         {
             List<ShopCar> shopcar = (List<ShopCar>)Session["list"];
             shopcar.RemoveAt(getIDProducto(id));
             return RedirectToAction("Index");
         }
-
+        /// <summary>
+        /// Method for Purchase
+        /// </summary>
+        /// <returns></returns>
         public ActionResult FinishPurchase()
         {
-            string username = "";
-            List<ShopCar> shopcar = (List<ShopCar>)Session["list"];
-            if (shopcar != null && shopcar.Count > 0)
+            if (User.Identity.IsAuthenticated)
             {
-                Factura newFactura = new Factura();
-                username = User.Identity.Name;
-                newFactura.Cliente = username;
-                newFactura.TotalFactura = shopcar.Sum(x => x.Producto.Precio * x.Cantidad);
-                newFactura.FechaCreado = DateTime.Now;
-                newFactura.FechaActualizado = DateTime.Now;
-
-                db.Facturas.Add(newFactura);
-                db.SaveChanges();
-
-                DetalleFactura newDetail = new DetalleFactura();
-                foreach (var item in Session["list"] as List<ShopCar>)
+                string username = "";
+                List<ShopCar> shopcar = (List<ShopCar>)Session["list"];
+                if (shopcar != null && shopcar.Count > 0)
                 {
-                    newDetail.FacturaID = newFactura.IDFactura;
-                    newDetail.ProductoID = item.Producto.IDProducto;
-                    newDetail.Cantidad = item.Cantidad;
-                    newDetail.PrecioProducto = item.Producto.Precio;
-                    newDetail.FechaCreado = DateTime.Now;
-                    newDetail.FechaActualizado = DateTime.Now;
-                    db.DetalleFacturas.Add(newDetail);
+                    Factura newFactura = new Factura();
+                    username = User.Identity.Name;
+                    newFactura.Cliente = username;
+                    newFactura.TotalFactura = shopcar.Sum(x => x.Producto.Precio * x.Cantidad);
+                    newFactura.FechaCreado = DateTime.Now;
+                    newFactura.FechaActualizado = DateTime.Now;
+
+                    db.Facturas.Add(newFactura);
                     db.SaveChanges();
 
-                    Producto assistant = new Producto();
-                    assistant.IDProducto = item.Producto.IDProducto;
-                    assistant.Nombre = item.Producto.Nombre;
-                    assistant.Precio = item.Producto.Precio;
-                    assistant.IDCategoria = item.Producto.IDCategoria;
-                    assistant.IDProveedor = item.Producto.IDProveedor;
-                    assistant.Stock = item.Producto.Stock - item.Cantidad;
-                    assistant.FechaCreado = item.Producto.FechaCreado;
-                    assistant.FechaActualizado = item.Producto.FechaActualizado;
+                    DetalleFactura newDetail = new DetalleFactura();
+                    foreach (var item in Session["list"] as List<ShopCar>)
+                    {
+                        newDetail.FacturaID = newFactura.IDFactura;
+                        newDetail.ProductoID = item.Producto.IDProducto;
+                        newDetail.Cantidad = item.Cantidad;
+                        newDetail.PrecioProducto = item.Producto.Precio;
+                        newDetail.FechaCreado = DateTime.Now;
+                        newDetail.FechaActualizado = DateTime.Now;
+                        db.DetalleFacturas.Add(newDetail);
+                        db.SaveChanges();
 
-                    db.Entry(assistant).State = EntityState.Modified;
-                    db.SaveChanges();
+                        Producto assistant = new Producto();
+                        assistant.IDProducto = item.Producto.IDProducto;
+                        assistant.Nombre = item.Producto.Nombre;
+                        assistant.Precio = item.Producto.Precio;
+                        assistant.IDCategoria = item.Producto.IDCategoria;
+                        assistant.IDProveedor = item.Producto.IDProveedor;
+                        assistant.Stock = item.Producto.Stock - item.Cantidad;
+                        assistant.FechaCreado = item.Producto.FechaCreado;
+                        assistant.FechaActualizado = item.Producto.FechaActualizado;
 
+                        db.Entry(assistant).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    shopcar.Clear();
                 }
+                return View();
             }
-            return View();
+            else {
+                return RedirectToAction("PurchaseIncomple", "ShopCars");
+            }
         }
-        private int getIDProducto(int id)//BUSCAMOS LA POSICION Q ESTA EL ID DEL PRODUCTO SI EXISTE
+        /// <summary>
+        /// Search Position ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        private int getIDProducto(int id)
         {
+            //Call List of Car
             List<ShopCar> shopcar = (List<ShopCar>)Session["list"];
             for (int i = 0; i < shopcar.Count; i++)
             {
@@ -109,6 +146,13 @@ namespace electronic_store.Controllers
                 }
             }
             return -1;
+        }
+        /// <summary>
+        /// Method Error Purchase Incomplete
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult PurchaseIncomple() {
+            return View();
         }
     }
 }
