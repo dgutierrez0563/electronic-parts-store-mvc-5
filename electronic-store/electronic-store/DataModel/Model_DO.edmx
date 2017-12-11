@@ -5,13 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Entities_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GamingAMD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GamingIntel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="OfficeAMD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="OfficeIntel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ProfileRoleUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ReportSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="dateInitial" Type="datetime" Mode="In" />
           <Parameter Name="dateFinal" Type="datetime" Mode="In" />
         </Function>
         <Function Name="viewAccesorios" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewAccesoriosVentilador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewCase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewDesktop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewDetailsInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
@@ -25,12 +31,29 @@
         <Function Name="viewFuentePoder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewMonitor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewPerifericos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewPerifericosCooler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewPerifericosEnfriamientoLiquido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewPerifericosTeclado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewProcesador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewProcesadorAMD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewProcesadorIntel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewRam16GB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewRam8GB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewTarjetaMadre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaMadreAMD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaMadreAsus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaMadreGigabyte" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaMadreIntel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaMadreMSI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewTarjetaVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideo2GB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideo3GB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideo4GB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideo8GB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideoAsus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideoMSI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="viewTarjetaVideoZotac" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="viewWishlistUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserName" Type="varchar" Mode="In" />
         </Function>
@@ -69,6 +92,29 @@
             <Parameter Name="dateInitial" Mode="In" Type="DateTime" />
             <Parameter Name="dateFinal" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="viewRam16GB" ReturnType="Collection(Entities_Model.viewRam16GB_Result)" />
+          <FunctionImport Name="viewRam8GB" ReturnType="Collection(Entities_Model.viewRam8GB_Result)" />
+          <FunctionImport Name="viewTarjetaMadreAMD" ReturnType="Collection(Entities_Model.viewTarjetaMadreAMD_Result)" />
+          <FunctionImport Name="viewTarjetaMadreAsus" ReturnType="Collection(Entities_Model.viewTarjetaMadreAsus_Result)" />
+          <FunctionImport Name="viewTarjetaMadreGigabyte" ReturnType="Collection(Entities_Model.viewTarjetaMadreGigabyte_Result)" />
+          <FunctionImport Name="viewTarjetaMadreIntel" ReturnType="Collection(Entities_Model.viewTarjetaMadreIntel_Result)" />
+          <FunctionImport Name="viewTarjetaMadreMSI" ReturnType="Collection(Entities_Model.viewTarjetaMadreMSI_Result)" />
+          <FunctionImport Name="viewTarjetaVideo2GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo2GB_Result)" />
+          <FunctionImport Name="viewTarjetaVideo3GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo3GB_Result)" />
+          <FunctionImport Name="viewTarjetaVideo4GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo4GB_Result)" />
+          <FunctionImport Name="viewTarjetaVideo8GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo8GB_Result)" />
+          <FunctionImport Name="viewTarjetaVideoAsus" ReturnType="Collection(Entities_Model.viewTarjetaVideoAsus_Result)" />
+          <FunctionImport Name="viewTarjetaVideoMSI" ReturnType="Collection(Entities_Model.viewTarjetaVideoMSI_Result)" />
+          <FunctionImport Name="viewTarjetaVideoZotac" ReturnType="Collection(Entities_Model.viewTarjetaVideoZotac_Result)" />
+          <FunctionImport Name="viewAccesoriosVentilador" ReturnType="Collection(Entities_Model.viewAccesoriosVentilador_Result)" />
+          <FunctionImport Name="viewPerifericosCooler" ReturnType="Collection(Entities_Model.viewPerifericosCooler_Result)" />
+          <FunctionImport Name="viewPerifericosEnfriamientoLiquido" ReturnType="Collection(Entities_Model.viewPerifericosEnfriamientoLiquido_Result)" />
+          <FunctionImport Name="viewPerifericosTeclado" ReturnType="Collection(Entities_Model.viewPerifericosTeclado_Result)" />
+          <FunctionImport Name="GamingAMD" ReturnType="Collection(Entities_Model.GamingAMD_Result)" />
+          <FunctionImport Name="GamingIntel" ReturnType="Collection(Entities_Model.GamingIntel_Result)" />
+          <FunctionImport Name="OfficeAMD" ReturnType="Collection(Entities_Model.OfficeAMD_Result)" />
+          <FunctionImport Name="OfficeIntel" ReturnType="Collection(Entities_Model.OfficeIntel_Result)" />
+          <FunctionImport Name="viewDesktop" ReturnType="Collection(Entities_Model.viewDesktop_Result)" />
         </EntityContainer>
         <ComplexType Name="ProfileRoleUser_Result">
           <Property Type="String" Name="User_Name" Nullable="false" MaxLength="256" />
@@ -189,6 +235,167 @@
         <ComplexType Name="ReportSales_Result">
           <Property Type="DateTime" Name="FechaCreado" Nullable="false" />
           <Property Type="Double" Name="TotalVentas" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="viewRam16GB_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewRam8GB_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaMadreAMD_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaMadreAsus_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaMadreGigabyte_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaMadreIntel_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaMadreMSI_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideo2GB_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideo3GB_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideo4GB_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideo8GB_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideoAsus_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideoMSI_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewTarjetaVideoZotac_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewAccesoriosVentilador_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewPerifericosCooler_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewPerifericosEnfriamientoLiquido_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewPerifericosTeclado_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GamingAMD_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GamingIntel_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="OfficeAMD_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="OfficeIntel_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="viewDesktop_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="Double" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="Int32" Name="Stock" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -385,6 +592,259 @@
               <ComplexTypeMapping TypeName="Entities_Model.ReportSales_Result">
                 <ScalarProperty Name="FechaCreado" ColumnName="FechaCreado" />
                 <ScalarProperty Name="TotalVentas" ColumnName="TotalVentas" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewRam16GB" FunctionName="Entities_Model.Store.viewRam16GB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewRam16GB_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewRam8GB" FunctionName="Entities_Model.Store.viewRam8GB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewRam8GB_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaMadreAMD" FunctionName="Entities_Model.Store.viewTarjetaMadreAMD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaMadreAMD_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaMadreAsus" FunctionName="Entities_Model.Store.viewTarjetaMadreAsus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaMadreAsus_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaMadreGigabyte" FunctionName="Entities_Model.Store.viewTarjetaMadreGigabyte">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaMadreGigabyte_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaMadreIntel" FunctionName="Entities_Model.Store.viewTarjetaMadreIntel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaMadreIntel_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaMadreMSI" FunctionName="Entities_Model.Store.viewTarjetaMadreMSI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaMadreMSI_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideo2GB" FunctionName="Entities_Model.Store.viewTarjetaVideo2GB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideo2GB_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideo3GB" FunctionName="Entities_Model.Store.viewTarjetaVideo3GB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideo3GB_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideo4GB" FunctionName="Entities_Model.Store.viewTarjetaVideo4GB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideo4GB_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideo8GB" FunctionName="Entities_Model.Store.viewTarjetaVideo8GB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideo8GB_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideoAsus" FunctionName="Entities_Model.Store.viewTarjetaVideoAsus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideoAsus_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideoMSI" FunctionName="Entities_Model.Store.viewTarjetaVideoMSI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideoMSI_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewTarjetaVideoZotac" FunctionName="Entities_Model.Store.viewTarjetaVideoZotac">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewTarjetaVideoZotac_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewAccesoriosVentilador" FunctionName="Entities_Model.Store.viewAccesoriosVentilador">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewAccesoriosVentilador_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewPerifericosCooler" FunctionName="Entities_Model.Store.viewPerifericosCooler">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewPerifericosCooler_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewPerifericosEnfriamientoLiquido" FunctionName="Entities_Model.Store.viewPerifericosEnfriamientoLiquido">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewPerifericosEnfriamientoLiquido_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewPerifericosTeclado" FunctionName="Entities_Model.Store.viewPerifericosTeclado">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewPerifericosTeclado_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GamingAMD" FunctionName="Entities_Model.Store.GamingAMD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.GamingAMD_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GamingIntel" FunctionName="Entities_Model.Store.GamingIntel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.GamingIntel_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OfficeAMD" FunctionName="Entities_Model.Store.OfficeAMD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.OfficeAMD_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="OfficeIntel" FunctionName="Entities_Model.Store.OfficeIntel">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.OfficeIntel_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewDesktop" FunctionName="Entities_Model.Store.viewDesktop">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Entities_Model.viewDesktop_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

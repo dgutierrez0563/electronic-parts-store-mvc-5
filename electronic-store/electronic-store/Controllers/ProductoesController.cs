@@ -273,5 +273,36 @@ namespace electronic_store.Controllers
             return View();
         }
 
+        public ActionResult Desktop()
+        {
+            string aux = "Desktop";
+            var auxFilter = (from f in db.Productoes
+                             where f.Categorias.Nombre.Equals(aux)
+                             orderby f.Precio ascending
+                             select f);
+
+            return View(auxFilter.ToList());
+        }
+        [HttpPost]
+        public ActionResult Desktop(double priceFinal = 0)
+        {
+            if (priceFinal > 0)
+            {
+                double aux_1 = priceFinal + 100000;
+                double aux_2 = priceFinal - 50000;
+
+                var auxFilter = (from f in db.Productoes
+                                 where (f.Precio >= @aux_2)
+                                 where (f.Precio <= @aux_1)
+                                 orderby f.Precio ascending
+                                 select f);
+
+                return View(auxFilter.ToList());
+            }
+            else
+            {
+                return RedirectToAction("NotFound");
+            }
+        }
     }
 }

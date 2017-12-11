@@ -162,10 +162,8 @@
                                     </h5>
                                     <h6>@string.Format("{0:C}", @item.Precio)</h6>
                                     <h7>In Stock @item.Stock</h7><br />
-                                    @*<a class="btn btn-default" href="~/ShopCars/AddToCar/@item.IDProducto"><span class="glyphicon-glyphicon-shopping-cart" style="font-size:14px; color:yellow;"></span></a>*@
-                                    <a  type="button" href="~/ShopCars/AddToCar/@item.IDProducto"><spam class="glyphicon glyphicon-shopping-cart" style="color:orange;font-size:18px;"></spam></a>
-                                    @*<a type="button" href="~/Wishlists/CreateAt/@item.IDProducto"><span class="glyphicon-glyphicon-heart" style="font-size:18px; color:red;"></span></a>*@
-                                    <a type="button" href="~/Wishlists/viewWishlist"><spam class="glyphicon glyphicon-heart" style="color:red; font-size:18px;"></spam></a>
+                                    <a class="btn btn-warning btn-xs" href="~/ShopCars/AddToCar/@item.IDProducto"><span class="glyphicon glyphicon-plus"></span> To Car</a>
+                                    <a class="btn btn-info btn-xs" href="~/Wishlists/CreateAt/@item.IDProducto"><span class="glyphicon glyphicon-plus"></span>Add Wish</a>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

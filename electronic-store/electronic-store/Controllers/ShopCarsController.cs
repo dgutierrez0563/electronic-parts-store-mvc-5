@@ -38,13 +38,11 @@ namespace electronic_store.Controllers
         /// <returns></returns>
         public ActionResult AddToCar(int id)
         {
-
             if (Session["list"] == null)
             {
                 List<ShopCar> shopcar = new List<ShopCar>();
                 shopcar.Add(new ShopCar(db.Productoes.Find(id), 1));
                 Session["list"] = shopcar;
-                //id = 0;
             }
             else
             {
@@ -53,7 +51,6 @@ namespace electronic_store.Controllers
                 if (auxiliar == -1)
                 {
                     shopcar.Add(new ShopCar(db.Productoes.Find(id), 1));
-                    //id = 0;
                 }
                 else
                 {
@@ -154,5 +151,18 @@ namespace electronic_store.Controllers
         public ActionResult PurchaseIncomple() {
             return View();
         }
+
+        //public ActionResult Compatibility(int id) {
+        //    //string name = 
+        //    //if () {
+
+        //    //}
+        //    var auxFilter = (from f in db.Productoes
+        //                     where f.Categorias.Nombre.Equals("Procesador")
+        //                     orderby f.Precio ascending
+        //                     select f.Nombre);
+
+        //    return auxFilter;
+        //}
     }
 }

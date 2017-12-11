@@ -30,6 +30,29 @@
       <Parameter Name="dateInitial" Mode="In" Type="DateTime" />
       <Parameter Name="dateFinal" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="viewRam16GB" ReturnType="Collection(Entities_Model.viewRam16GB_Result)" />
+    <FunctionImport Name="viewRam8GB" ReturnType="Collection(Entities_Model.viewRam8GB_Result)" />
+    <FunctionImport Name="viewTarjetaMadreAMD" ReturnType="Collection(Entities_Model.viewTarjetaMadreAMD_Result)" />
+    <FunctionImport Name="viewTarjetaMadreAsus" ReturnType="Collection(Entities_Model.viewTarjetaMadreAsus_Result)" />
+    <FunctionImport Name="viewTarjetaMadreGigabyte" ReturnType="Collection(Entities_Model.viewTarjetaMadreGigabyte_Result)" />
+    <FunctionImport Name="viewTarjetaMadreIntel" ReturnType="Collection(Entities_Model.viewTarjetaMadreIntel_Result)" />
+    <FunctionImport Name="viewTarjetaMadreMSI" ReturnType="Collection(Entities_Model.viewTarjetaMadreMSI_Result)" />
+    <FunctionImport Name="viewTarjetaVideo2GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo2GB_Result)" />
+    <FunctionImport Name="viewTarjetaVideo3GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo3GB_Result)" />
+    <FunctionImport Name="viewTarjetaVideo4GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo4GB_Result)" />
+    <FunctionImport Name="viewTarjetaVideo8GB" ReturnType="Collection(Entities_Model.viewTarjetaVideo8GB_Result)" />
+    <FunctionImport Name="viewTarjetaVideoAsus" ReturnType="Collection(Entities_Model.viewTarjetaVideoAsus_Result)" />
+    <FunctionImport Name="viewTarjetaVideoMSI" ReturnType="Collection(Entities_Model.viewTarjetaVideoMSI_Result)" />
+    <FunctionImport Name="viewTarjetaVideoZotac" ReturnType="Collection(Entities_Model.viewTarjetaVideoZotac_Result)" />
+    <FunctionImport Name="viewAccesoriosVentilador" ReturnType="Collection(Entities_Model.viewAccesoriosVentilador_Result)" />
+    <FunctionImport Name="viewPerifericosCooler" ReturnType="Collection(Entities_Model.viewPerifericosCooler_Result)" />
+    <FunctionImport Name="viewPerifericosEnfriamientoLiquido" ReturnType="Collection(Entities_Model.viewPerifericosEnfriamientoLiquido_Result)" />
+    <FunctionImport Name="viewPerifericosTeclado" ReturnType="Collection(Entities_Model.viewPerifericosTeclado_Result)" />
+    <FunctionImport Name="GamingAMD" ReturnType="Collection(Entities_Model.GamingAMD_Result)" />
+    <FunctionImport Name="GamingIntel" ReturnType="Collection(Entities_Model.GamingIntel_Result)" />
+    <FunctionImport Name="OfficeAMD" ReturnType="Collection(Entities_Model.OfficeAMD_Result)" />
+    <FunctionImport Name="OfficeIntel" ReturnType="Collection(Entities_Model.OfficeIntel_Result)" />
+    <FunctionImport Name="viewDesktop" ReturnType="Collection(Entities_Model.viewDesktop_Result)" />
   </EntityContainer>
   <ComplexType Name="ProfileRoleUser_Result">
     <Property Type="String" Name="User_Name" Nullable="false" MaxLength="256" />
@@ -150,5 +173,166 @@
   <ComplexType Name="ReportSales_Result">
     <Property Type="DateTime" Name="FechaCreado" Nullable="false" />
     <Property Type="Double" Name="TotalVentas" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="viewRam16GB_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewRam8GB_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaMadreAMD_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaMadreAsus_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaMadreGigabyte_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaMadreIntel_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaMadreMSI_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideo2GB_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideo3GB_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideo4GB_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideo8GB_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideoAsus_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideoMSI_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewTarjetaVideoZotac_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewAccesoriosVentilador_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewPerifericosCooler_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewPerifericosEnfriamientoLiquido_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewPerifericosTeclado_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GamingAMD_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GamingIntel_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="OfficeAMD_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="OfficeIntel_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewDesktop_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="Double" Name="Precio" Nullable="false" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
   </ComplexType>
 </Schema>

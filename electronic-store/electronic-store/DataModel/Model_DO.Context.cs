@@ -141,5 +141,120 @@ namespace electronic_store.DataModel
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ReportSales_Result>("ReportSales", dateInitialParameter, dateFinalParameter);
         }
+    
+        public virtual ObjectResult<viewRam16GB_Result> viewRam16GB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewRam16GB_Result>("viewRam16GB");
+        }
+    
+        public virtual ObjectResult<viewRam8GB_Result> viewRam8GB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewRam8GB_Result>("viewRam8GB");
+        }
+    
+        public virtual ObjectResult<viewTarjetaMadreAMD_Result> viewTarjetaMadreAMD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaMadreAMD_Result>("viewTarjetaMadreAMD");
+        }
+    
+        public virtual ObjectResult<viewTarjetaMadreAsus_Result> viewTarjetaMadreAsus()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaMadreAsus_Result>("viewTarjetaMadreAsus");
+        }
+    
+        public virtual ObjectResult<viewTarjetaMadreGigabyte_Result> viewTarjetaMadreGigabyte()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaMadreGigabyte_Result>("viewTarjetaMadreGigabyte");
+        }
+    
+        public virtual ObjectResult<viewTarjetaMadreIntel_Result> viewTarjetaMadreIntel()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaMadreIntel_Result>("viewTarjetaMadreIntel");
+        }
+    
+        public virtual ObjectResult<viewTarjetaMadreMSI_Result> viewTarjetaMadreMSI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaMadreMSI_Result>("viewTarjetaMadreMSI");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideo2GB_Result> viewTarjetaVideo2GB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideo2GB_Result>("viewTarjetaVideo2GB");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideo3GB_Result> viewTarjetaVideo3GB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideo3GB_Result>("viewTarjetaVideo3GB");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideo4GB_Result> viewTarjetaVideo4GB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideo4GB_Result>("viewTarjetaVideo4GB");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideo8GB_Result> viewTarjetaVideo8GB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideo8GB_Result>("viewTarjetaVideo8GB");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideoAsus_Result> viewTarjetaVideoAsus()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideoAsus_Result>("viewTarjetaVideoAsus");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideoMSI_Result> viewTarjetaVideoMSI()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideoMSI_Result>("viewTarjetaVideoMSI");
+        }
+    
+        public virtual ObjectResult<viewTarjetaVideoZotac_Result> viewTarjetaVideoZotac()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewTarjetaVideoZotac_Result>("viewTarjetaVideoZotac");
+        }
+    
+        public virtual ObjectResult<viewAccesoriosVentilador_Result> viewAccesoriosVentilador()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewAccesoriosVentilador_Result>("viewAccesoriosVentilador");
+        }
+    
+        public virtual ObjectResult<viewPerifericosCooler_Result> viewPerifericosCooler()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewPerifericosCooler_Result>("viewPerifericosCooler");
+        }
+    
+        public virtual ObjectResult<viewPerifericosEnfriamientoLiquido_Result> viewPerifericosEnfriamientoLiquido()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewPerifericosEnfriamientoLiquido_Result>("viewPerifericosEnfriamientoLiquido");
+        }
+    
+        public virtual ObjectResult<viewPerifericosTeclado_Result> viewPerifericosTeclado()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewPerifericosTeclado_Result>("viewPerifericosTeclado");
+        }
+    
+        public virtual ObjectResult<GamingAMD_Result> GamingAMD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GamingAMD_Result>("GamingAMD");
+        }
+    
+        public virtual ObjectResult<GamingIntel_Result> GamingIntel()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GamingIntel_Result>("GamingIntel");
+        }
+    
+        public virtual ObjectResult<OfficeAMD_Result> OfficeAMD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<OfficeAMD_Result>("OfficeAMD");
+        }
+    
+        public virtual ObjectResult<OfficeIntel_Result> OfficeIntel()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<OfficeIntel_Result>("OfficeIntel");
+        }
+    
+        public virtual ObjectResult<viewDesktop_Result> viewDesktop()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<viewDesktop_Result>("viewDesktop");
+        }
     }
 }

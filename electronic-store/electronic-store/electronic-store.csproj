@@ -184,6 +184,12 @@
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ShopCarsController.cs" />
     <Compile Include="Controllers\WishlistsController.cs" />
+    <Compile Include="DataModel\GamingAMD_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\GamingIntel_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\Model_DO.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,16 +205,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_DO.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\OfficeAMD_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\OfficeIntel_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\ProfileRoleUser_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\ReportSales_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\viewAccesoriosVentilador_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\viewAccesorios_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\viewCase_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewDesktop_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\viewDetailsInvoice_Result.cs">
@@ -229,6 +247,15 @@
     <Compile Include="DataModel\viewMonitor_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\viewPerifericosCooler_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewPerifericosEnfriamientoLiquido_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewPerifericosTeclado_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\viewPerifericos_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
@@ -241,10 +268,52 @@
     <Compile Include="DataModel\viewProcesador_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\viewRam16GB_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewRam8GB_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\viewRam_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\viewTarjetaMadreAMD_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaMadreAsus_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaMadreGigabyte_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaMadreIntel_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaMadreMSI_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\viewTarjetaMadre_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideo2GB_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideo3GB_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideo4GB_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideo8GB_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideoAsus_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideoMSI_Result.cs">
+      <DependentUpon>Model_DO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\viewTarjetaVideoZotac_Result.cs">
       <DependentUpon>Model_DO.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\viewTarjetaVideo_Result.cs">
@@ -495,6 +564,32 @@
     <Content Include="Views\Facturas\ErrorInvoice.cshtml" />
     <Content Include="Views\Productoes\_Products.cshtml" />
     <Content Include="Views\Facturas\AllFacturas.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideo2GB.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideo3GB.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideo4GB.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideo8GB.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideoAsus.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideoMSI.cshtml" />
+    <Content Include="Views\Consultas\TarjetaVideoZotac.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMdreAMD.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMdreIntel.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMdreAsus.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMdreGigabyte.cshtml" />
+    <Content Include="Views\Consultas\TarjetaMdreMSI.cshtml" />
+    <Content Include="Views\Consultas\Ram8GB.cshtml" />
+    <Content Include="Views\Consultas\Ram16GB.cshtml" />
+    <Content Include="Views\Consultas\PerifericosCooler.cshtml" />
+    <Content Include="Views\Consultas\PerifericosEnfriamientoLiquido.cshtml" />
+    <Content Include="Views\Consultas\PerifericosTeclado.cshtml" />
+    <Content Include="Views\Consultas\AccesoriosVentilador.cshtml" />
+    <Content Include="Views\Consultas\Desktop2.cshtml" />
+    <Content Include="Views\Consultas\GamingAMD.cshtml" />
+    <Content Include="Views\Consultas\GamingIntel.cshtml" />
+    <Content Include="Views\Consultas\OfficeAMD.cshtml" />
+    <Content Include="Views\Consultas\OfficeIntel.cshtml" />
+    <Content Include="Views\Consultas\NotFound.cshtml" />
+    <Content Include="Views\Consultas\Desktop.cshtml" />
+    <Content Include="Views\Productoes\Desktop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

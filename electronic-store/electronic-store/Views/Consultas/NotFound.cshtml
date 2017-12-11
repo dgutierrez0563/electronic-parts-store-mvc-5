@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<electronic_store.Models.Producto>
+@{
+    ViewBag.Title = "Information Not Found";
+}
+
+<h2>Information Not Found</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <br />
+        <div class="form-group">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Price Final" name="price">
+                    <span class="input-group-btn">
+                        <button type="submit" value="Search" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<br />
+<div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h3>Warning!</h3>
+    <p>Information Not Found</p>
+    <p>Please! Check the required price fields</p>
+</div>
+
